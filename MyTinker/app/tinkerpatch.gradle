@@ -3,10 +3,12 @@ def baseInfo = "20200416_0442"
 def appName = "app-release"
 
 ext {
+    // 是否打开tinker的功能。
     tinkerEnable = true
     tinkerOldApkPath = "${bakPath}/${baseInfo}/${appName}.apk"
     tinkerApplyMappingPath = "${bakPath}/${baseInfo}/${appName}-mapping.txt"
     tinkerApplyResourcePath = "${bakPath}/${baseInfo}/${appName}-R.txt"
+    // 在运行过程中，我们需要验证基准apk包的tinkerId是否等于补丁包的tinkerId。这个是决定补丁包能运行在哪些基准包上面，一般来说我们可以使用git版本号、versionName等等。
     tinkerID = "1.0"
 }
 
